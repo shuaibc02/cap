@@ -819,7 +819,7 @@ impl<C: CapConfig> BlindFactor<C> {
     Ord(bound = "C: CapConfig"),
     Hash(bound = "C: CapConfig")
 )]
-pub struct Nullifier<C: CapConfig>(pub(crate) C::ScalarField);
+pub struct Nullifier<C: CapConfig>(pub C::ScalarField);
 
 impl<C: CapConfig> Nullifier<C> {
     /// Generate a random nullifier

@@ -581,7 +581,7 @@ fn compute_nullifier_key<C: CapConfig>(
     Eq(bound = "C: CapConfig"),
     Hash(bound = "C: CapConfig")
 )]
-pub(crate) struct NullifierKey<C: CapConfig>(pub(crate) C::ScalarField);
+pub struct NullifierKey<C: CapConfig>(pub C::ScalarField);
 
 impl<C: CapConfig> NullifierKey<C> {
     // Nullify an asset record commitment (with its unique id in the
