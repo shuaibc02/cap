@@ -233,7 +233,7 @@ impl<C: CapConfig> UserKeyPair<C> {
     // Derive nullifying secret key.
     // Return user address secret key if freezer public key is neutral,
     // otherwise return the hash of the Diffie-Hellman shared key
-    pub(crate) fn derive_nullifier_key(&self, fpk: &FreezerPubKey<C>) -> NullifierKey<C> {
+    pub fn derive_nullifier_key(&self, fpk: &FreezerPubKey<C>) -> NullifierKey<C> {
         if fpk.0 == GroupProjective::<C::EmbeddedCurveParam>::default() {
             NullifierKey::from(self.address_secret_ref())
         } else {
