@@ -71,7 +71,7 @@ pub trait CapConfig: Sized + Clone + Debug + PartialEq {
 
 /// A concrete instantation of `CapConfig`
 #[cfg(feature = "bn254")]
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
 pub struct Config;
 
 #[cfg(feature = "bn254")]
@@ -86,7 +86,7 @@ impl CapConfig for Config {
 
 /// A concrete instantation of `CapConfig`
 #[cfg(feature = "bls12_377")]
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
 pub struct Config;
 
 #[cfg(feature = "bls12_377")]
@@ -101,7 +101,7 @@ impl CapConfig for Config {
 
 /// A concrete instantation of `CapConfig`
 #[cfg(feature = "bls12_381")]
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
 pub struct Config;
 
 #[cfg(feature = "bls12_381")]
