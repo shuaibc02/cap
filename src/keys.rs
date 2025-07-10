@@ -64,7 +64,7 @@ use serde::{Deserialize, Serialize};
     Hash(bound = "C: CapConfig")
 )]
 #[serde(bound = "C: CapConfig")]
-pub struct UserAddress<C: CapConfig>(pub(crate) schnorr::VerKey<C::EmbeddedCurveParam>);
+pub struct UserAddress<C: CapConfig>(pub schnorr::VerKey<C::EmbeddedCurveParam>);
 
 impl<C: CapConfig> From<&UserAddress<C>> for (C::ScalarField, C::ScalarField) {
     fn from(addr: &UserAddress<C>) -> Self {
