@@ -169,7 +169,9 @@ impl<C: CapConfig> UserPubKey<C> {
 )]
 // #[derive(Default, Debug, Clone, CanonicalSerialize, CanonicalDeserialize)]
 pub struct UserKeyPair<C: CapConfig> {
+    /// The key pair for the user's address
     pub addr_keypair: schnorr::KeyPair<C::EmbeddedCurveParam>,
+    /// The key pair for the user's encryption key
     pub enc_keypair: aead::KeyPair,
 }
 
