@@ -971,7 +971,7 @@ dependencies = [
 [[package]]
 name = "jf-plonk"
 version = "0.1.2"
-source = "git+https://github.com/zhenfeizhang/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
+source = "git+https://github.com/shuaibc02/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
 dependencies = [
  "ark-bls12-377",
  "ark-bls12-381",
@@ -1004,7 +1004,7 @@ dependencies = [
 [[package]]
 name = "jf-primitives"
 version = "0.1.2"
-source = "git+https://github.com/zhenfeizhang/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
+source = "git+https://github.com/shuaibc02/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
 dependencies = [
  "ark-bls12-377",
  "ark-bls12-381",
@@ -1036,7 +1036,7 @@ dependencies = [
 [[package]]
 name = "jf-relation"
 version = "0.1.2"
-source = "git+https://github.com/zhenfeizhang/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
+source = "git+https://github.com/shuaibc02/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
 dependencies = [
  "ark-bls12-377",
  "ark-bls12-381",
@@ -1062,7 +1062,7 @@ dependencies = [
 [[package]]
 name = "jf-utils"
 version = "0.1.2"
-source = "git+https://github.com/zhenfeizhang/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
+source = "git+https://github.com/shuaibc02/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
 dependencies = [
  "anyhow",
  "ark-ec",
@@ -1081,7 +1081,7 @@ dependencies = [
 [[package]]
 name = "jf-utils-derive"
 version = "0.1.2"
-source = "git+https://github.com/zhenfeizhang/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
+source = "git+https://github.com/shuaibc02/jellyfish.git?branch=remove-std#3968ea63f93bb9f11808938e58f35190fe39f5e6"
 dependencies = [
  "ark-std",
  "quote",

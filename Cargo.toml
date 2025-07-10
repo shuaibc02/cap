@@ -29,10 +29,10 @@ derivative = { version = "2", features = ["use_core"] }
 derive_more = "0.99.17"
 displaydoc = { version = "0.2.3", default-features = false }
 hex-literal = "^0.3"
-jf-plonk = { git = "https://github.com/zhenfeizhang/jellyfish.git", branch = "remove-std" }
-jf-primitives = { git = "https://github.com/zhenfeizhang/jellyfish.git", branch = "remove-std" }
-jf-relation = { git = "https://github.com/zhenfeizhang/jellyfish.git", branch = "remove-std" }
-jf-utils = { git = "https://github.com/zhenfeizhang/jellyfish.git", branch = "remove-std" }
+jf-plonk = { git = "https://github.com/shuaibc02/jellyfish.git", branch = "remove-std" }
+jf-primitives = { git = "https://github.com/shuaibc02/jellyfish.git", branch = "remove-std" }
+jf-relation = { git = "https://github.com/shuaibc02/jellyfish.git", branch = "remove-std" }
+jf-utils = { git = "https://github.com/shuaibc02/jellyfish.git", branch = "remove-std" }
 num_cpus = { version = "1.13.0", default-features = false }
 percentage = { version = "0.1.0", default-features = false }
 primitive-types = "0.11"
