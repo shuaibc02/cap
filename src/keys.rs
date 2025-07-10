@@ -169,8 +169,8 @@ impl<C: CapConfig> UserPubKey<C> {
 )]
 // #[derive(Default, Debug, Clone, CanonicalSerialize, CanonicalDeserialize)]
 pub struct UserKeyPair<C: CapConfig> {
-    pub(crate) addr_keypair: schnorr::KeyPair<C::EmbeddedCurveParam>,
-    pub(crate) enc_keypair: aead::KeyPair,
+    pub addr_keypair: schnorr::KeyPair<C::EmbeddedCurveParam>,
+    pub enc_keypair: aead::KeyPair,
 }
 
 impl<C: CapConfig> UserKeyPair<C> {

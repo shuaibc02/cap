@@ -1594,7 +1594,7 @@ impl<C: CapConfig> ViewableData<C> {
 #[tagged_blob("RECMEMO")]
 #[derive(Clone, Debug, PartialEq, Eq, Hash, CanonicalSerialize, CanonicalDeserialize)]
 /// Encrypted Message for owners of transaction outputs
-pub struct ReceiverMemo(pub(crate) aead::Ciphertext);
+pub struct ReceiverMemo(pub aead::Ciphertext);
 
 impl ReceiverMemo {
     /// Create a new ReceiverMemo from an Record Opening.
