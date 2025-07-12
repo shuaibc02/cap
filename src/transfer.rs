@@ -163,20 +163,20 @@ impl<C: CapConfig> TransferNote<C> {
     where
         R: CryptoRng + RngCore,
     {
-        if !inputs[0].ro.asset_def.is_native()
-            || inputs
-                .iter()
-                .skip(1)
-                .any(|input| !(input.ro.is_dummy() || input.ro.asset_def.is_native()))
-            || outputs.iter().any(|output| !output.asset_def.is_native())
-        {
-            return Err(TxnApiError::InvalidParameter(
-                "Should only contain native asset types in inputs and outputs,\
-                 if you are trying to transfer non-native assets, \
-                 please use `TransferNote::generate_non_native()` api."
-                    .to_string(),
-            ));
-        }
+        //if !inputs[0].ro.asset_def.is_native()
+        //    || inputs
+        //        .iter()
+        //        .skip(1)
+        //        .any(|input| !(input.ro.is_dummy() || input.ro.asset_def.is_native()))
+        //    || outputs.iter().any(|output| !output.asset_def.is_native())
+        //{
+        //    return Err(TxnApiError::InvalidParameter(
+        //        "Should only contain native asset types in inputs and outputs,\
+        //         if you are trying to transfer non-native assets, \
+        //         please use `TransferNote::generate_non_native()` api."
+        //            .to_string(),
+        //    ));
+        //}
         let in_amounts: Vec<_> = inputs
             .iter()
             .filter(|input| !input.ro.is_dummy())
@@ -207,7 +207,8 @@ impl<C: CapConfig> TransferNote<C> {
         let fee_change_ro = RecordOpening::new(
             rng,
             fee_change,
-            AssetDefinition::native(),
+            //AssetDefinition::native(),
+            inputs[0].ro.asset_def.clone(),
             fee_chg_pub_key,
             FreezeFlag::Unfrozen,
         );
