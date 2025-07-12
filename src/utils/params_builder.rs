@@ -810,6 +810,7 @@ impl<'a, C: CapConfig> TransferParamsBuilder<'a, C> {
             self.input_ros[0].amount - self.fee_chg_ro.amount,
             valid_until,
             proving_key,
+            vec![],
         )?;
         let recv_memos_res: Result<Vec<_>, _> = self
             .output_ros

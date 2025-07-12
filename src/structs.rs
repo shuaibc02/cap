@@ -844,7 +844,7 @@ impl<C: CapConfig> Nullifier<C> {
     Hash(bound = "C: CapConfig")
 )]
 
-pub struct RecordCommitment<C: CapConfig>(pub(crate) C::ScalarField);
+pub struct RecordCommitment<C: CapConfig>(pub C::ScalarField);
 
 impl<C: CapConfig> From<&RecordOpening<C>> for RecordCommitment<C> {
     fn from(ro: &RecordOpening<C>) -> Self {

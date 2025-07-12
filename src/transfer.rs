@@ -151,6 +151,7 @@ impl<C: CapConfig> TransferNote<C> {
         fee: Amount,
         valid_until: u64,
         proving_key: &TransferProvingKey<C>,
+        extra_proof_bound_data: Vec<u8>,
     ) -> Result<
         (
             Self,
@@ -218,7 +219,7 @@ impl<C: CapConfig> TransferNote<C> {
             &outputs_with_fee_change,
             proving_key,
             valid_until,
-            vec![],
+            extra_proof_bound_data,
         )?;
         Ok((note, sig_key, fee_change_ro))
     }

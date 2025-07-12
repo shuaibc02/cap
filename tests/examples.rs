@@ -1305,6 +1305,7 @@ impl SimpleUserWalletMock {
                     fee,
                     UNEXPIRED_VALID_UNTIL,
                     &proving_key,
+                    vec![],
                 )?;
                 self.insert_proving_key(num_inputs, num_outputs, proving_key);
                 r

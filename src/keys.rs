@@ -230,6 +230,7 @@ impl<C: CapConfig> UserKeyPair<C> {
         )
     }
 
+    /// Derive nullifying secret key.
     // Derive nullifying secret key.
     // Return user address secret key if freezer public key is neutral,
     // otherwise return the hash of the Diffie-Hellman shared key
