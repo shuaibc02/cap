@@ -344,7 +344,7 @@ impl<'a, C: CapConfig> TransferParamsBuilder<'a, C> {
     ) -> Self {
         assert_eq!(user_keypairs.len(), num_input);
         let tree_depth = Self::calculate_tree_depth(num_input, num_output, tree_depth);
-        let mut rng = ark_std::test_rng();
+        let mut rng = rand::rngs::StdRng::seed_from_u64(12345);
         let transfer_asset_def = NonNativeAssetDefinition::generate(&mut rng);
 
         Self {
@@ -662,7 +662,8 @@ impl<'a, C: CapConfig> TransferParamsBuilder<'a, C> {
         self
     }
 
-    pub(crate) fn update_output_asset_def(
+    /// Update the asset definition of an output record at `index`
+    pub fn update_output_asset_def(
         mut self,
         index: usize,
         asset_def: AssetDefinition<C>,
@@ -903,15 +904,21 @@ impl<'a, C: CapConfig> TransferParamsBuilder<'a, C> {
 }
 
 #[derive(Debug)]
-pub(crate) struct NonNativeAssetDefinition<C: CapConfig> {
-    pub(crate) asset_def: AssetDefinition<C>,
-    pub(crate) viewer_keypair: ViewerKeyPair<C>,
-    pub(crate) minter_keypair: CredIssuerKeyPair<C>,
-    pub(crate) freezer_keypair: FreezerKeyPair<C>,
+/// Struct containing the parameters needed to build a non-native asset
+pub struct NonNativeAssetDefinition<C: CapConfig> {
+    /// Asset definition
+    pub asset_def: AssetDefinition<C>,
+    /// Key pairs for the asset
+    pub viewer_keypair: ViewerKeyPair<C>,
+    /// Key pair for the minter
+    pub minter_keypair: CredIssuerKeyPair<C>,
+    /// Key pair for the freezer
+    pub freezer_keypair: FreezerKeyPair<C>,
 }
 
 impl<C: CapConfig> NonNativeAssetDefinition<C> {
-    fn generate<R: RngCore + CryptoRng>(rng: &mut R) -> Self {
+    /// generate a random non-native asset definition
+    pub fn generate<R: RngCore + CryptoRng>(rng: &mut R) -> Self {
         let viewer_keypair = ViewerKeyPair::generate(rng);
         let minter_keypair = CredIssuerKeyPair::generate(rng);
         let freezer_keypair = FreezerKeyPair::generate(rng);

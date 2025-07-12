@@ -742,6 +742,10 @@ pub(crate) mod txn_helpers {
         // check 0 balance
         for (&at, &sum) in balances.iter() {
             if sum != 0i128 {
+                ark_std::println!(
+                    "\nbalance\n{:?} ",
+                    balances
+                );
                 return Err(TxnApiError::InvalidParameter(format!(
                     "Unbalanced input and output amounts for asset code:{:?}",
                     at.0.to_string()
